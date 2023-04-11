@@ -52,5 +52,19 @@ class DeezerService {
         })
     }
 
+    fun searchAlbumTracks(albumId: Long, callback: CallBackDeezer) {
+        val url = "https://api.deezer.com/album/$albumId/tracks"
+        val request = Request.Builder().url(url).build()
+        val client = OkHttpClient()
+        client.newCall(request).enqueue(object : Callback {
+            override fun onFailure(call: Call, e: IOException) {
+                callback.onFailure(call, e)
+            }
+
+            override fun onResponse(call: Call, response: Response) {
+                callback.onSuccess(call, response)
+            }
+        })
+    }
 
 }

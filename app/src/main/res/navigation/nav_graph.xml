@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/ArtistsFragment"
+    >
+
+    <fragment
+        android:id="@+id/ArtistsFragment"
+        android:name="com.example.deezers.ArtistsFragment"
+        android:label="Artists Fragment"
+        tools:layout="@layout/fragment_first"
+        >
+
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/AlbumsFragment"
+            />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/AlbumsFragment"
+        android:name="com.example.deezers.AlbumsFragment"
+        android:label="Albums Fragment"
+        tools:layout="@layout/fragment_second"
+        >
+
+        <action
+            android:id="@+id/action_AlbumsFragment_to_TracksFragment"
+            app:destination="@id/TracksFragment"
+            />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/TracksFragment"
+        android:name="com.example.deezers.TracksFragment"
+        android:label="Tracks Fragment"
+        tools:layout="@layout/fragment_tracks"
+        >
+
+
+    </fragment>
+</navigation>
